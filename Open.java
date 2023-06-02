@@ -9,10 +9,11 @@ public class Open implements Command{
     }
     @Override
     public void execute() {
-        try {//проверява за грешки
-            Main.svgLines = Files.readAllLines(Path.of(filePath));//Path е клас част от java.nio.file пакет за методи за работа с патове.
+        try {
+            Main.svgLines = Files.readAllLines(Path.of(filePath));
+            Main.OriginalSvgLines = Files.readAllLines(Path.of(filePath));
             System.out.println("SVG file opened: " + filePath);
-        } catch (IOException e) {//взима грешките от try
+        } catch (IOException e) {
             System.out.println("An error occurred while opening the SVG file: " + e.getMessage());
         }
     }

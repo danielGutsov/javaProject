@@ -12,6 +12,7 @@ public class Close implements Command{
     }
     @Override
     public void execute() {
+        System.out.println(shapeMap);
         svgLines = null;
         shapeMap.clear();
         filePath = null;
